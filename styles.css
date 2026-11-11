@@ -1,14 +1,19 @@
 body {
-    background-color: #0F172A;
+    /* removes 8px gap from all four sides to prevent rectangle:*/
+    margin: 0;  
+    background-color:black;
 }
 .header {
-    border-bottom: 1px solid;
-    background-color: #1E293B;
+    border-bottom: 3px solid #00F5D4;
+    background-color: #090D16;
+    position: sticky; 
+    top: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     /* Allows Items to drop to the next line on small screens: */
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 25px;
+    padding: 18px 20px;
 }
 
 .nav {
@@ -16,8 +21,52 @@ body {
     flex-wrap: wrap;
     gap: 20px
 }
+
+.name {
+  font-family: "Momo Signature", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+.name:hover {
+  color: #00F5D4; /* Switches text to bright neon cyan */
+  text-shadow: 
+    0 0 10px rgba(0, 245, 212, 0.8),
+    0 0 25px rgba(0, 245, 212, 0.5),
+    0 0 45px rgba(0, 245, 212, 0.3); /* Layers three shadows for a realistic neon aura */
+}
+
+.nav_page {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+.nav_page:hover {
+  cursor: pointer;
+  color: #00F5D4; /* Switches text to bright neon cyan */
+  text-shadow: 
+    0 0 10px rgba(0, 245, 212, 0.8),
+    0 0 25px rgba(0, 245, 212, 0.5),
+    0 0 45px rgba(0, 245, 212, 0.3); /* Layers three shadows for a realistic neon aura */
+}
+
 h1 {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: white;
+  margin-top: 3%;
+  margin-left: 5%;
 }
+
+.welcome:hover {
+  color: #00F5D4; /* Switches text to bright neon cyan */
+  text-shadow: 
+    0 0 10px rgba(0, 245, 212, 0.8),
+    0 0 25px rgba(0, 245, 212, 0.5),
+    0 0 45px rgba(0, 245, 212, 0.3); /* Layers three shadows for a realistic neon aura */
+}
+
