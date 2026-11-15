@@ -1,5 +1,5 @@
 body {
-    /* to push footer down */
+    /* to push footer down & backround color: */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -22,7 +22,7 @@ body {
 .nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px
+    gap: 20px;
 }
 
 .name {
@@ -30,14 +30,6 @@ body {
   font-weight: 400;
   font-style: normal;
   color: white;
-}
-
-.name:hover {
-  color: #00F5D4; 
-  text-shadow: 
-    0 0 10px rgba(0, 245, 212, 0.8),
-    0 0 25px rgba(0, 245, 212, 0.5),
-    0 0 45px rgba(0, 245, 212, 0.3); /* Layers three shadows for a realistic neon */
 }
 
 .nav_page {
@@ -49,31 +41,67 @@ body {
 
 .nav_page:hover {
   cursor: pointer;
-  color: #00F5D4; 
-  text-shadow: 
-    0 0 10px rgba(0, 245, 212, 0.8),
-    0 0 25px rgba(0, 245, 212, 0.5),
-    0 0 45px rgba(0, 245, 212, 0.3); /* Layers three shadows for a realistic neon aura */
 }
 
+/* Controls main top 3 elements (hero_text, dev_image and current status {quick_info}) */
 .hero_text { 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 1% 5%; /* Keeps everything neatly away from the edges */
+  min-width: 280px;
+  margin-top: 2%;
+  padding: 0.5% 4%; 
 }
 
-/* Text box: stacks 3 lines vertically */
+/* Stacks 3 lines vertically */
 .text_group {
   display: flex;
   flex-direction: column;
   gap: 2px;
   margin: 0;
-  line-height: 2px;
+  line-height: 0.1;
+}
+/* For hero_text: */
+.hello{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 60px;
+  font-style:normal ;
+  color:white;
 }
 
+.im_ayaan {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 100px;
+  font-style:italic ;
+  color: darkcyan;
+  transition: letter-spacing 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.im_ayaan:hover {
+  letter-spacing: 4px;        
+  transform: translateX(8px); 
+}
+/* For highschool student FMM blinking terminal effect */
+.current_job{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: white;
+}
+
+.current_job::after {
+  content: "_";
+  color: #00F5D4;
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* for dev image: */
 .image{
-  margin-right: 35%;
   perspective: 800px;
 }
 
@@ -97,78 +125,60 @@ body {
     0 0 45px rgba(0, 245, 212, 0.3); 
 }
 
-.hello{
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 60px;
-  font-style:normal ;
-  color:white;
+/* for current status (quick_info card) */
+.quick_info{
+  border:3px solid seashell;
+  background-color:darkslategrey;
+  padding: 2%;
+  border-radius: 20px;
+  box-shadow: 
+  0 0 15px rgba(0, 245, 212, 0.5),
+  0 0 35px rgba(0, 245, 212, 0.25);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hello:hover {
-  color: #00F5D4; /* Switches text to bright neon cyan */
-  text-shadow: 
-    0 0 10px rgba(0, 245, 212, 0.8),
-    0 0 25px rgba(0, 245, 212, 0.5),
-    0 0 45px rgba(0, 245, 212, 0.3); /* Layers three shadows for a realistic neon aura */
-}
-
-.im_ayaan {
+.quick_info h1,
+.quick_info p{
   font-family: "Bebas Neue", sans-serif;
-  font-size: 100px;
-  font-style:italic ;
-  color:darkcyan;
-  transition: letter-spacing 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
-}
-
-.im_ayaan:hover {
-  letter-spacing: 4px;        /* Smoothly spreads the letters apart */
-  transform: translateX(8px); /* Nudges the word slightly right */
-  text-shadow: 
-  0 0 10px rgba(0, 245, 212, 0.8),
-  0 0 25px rgba(0, 245, 212, 0.5),
-  0 0 45px rgba(0, 245, 212, 0.3); /* Layers three shadows for a realistic neon aura */
-}
-/* for highschool student FMM blinking terminal effect */
-.current_job{
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-style: normal;
   color: white;
 }
 
-.current_job:hover {
-  color: #00F5D4; /* Switches text to bright neon cyan */
-  text-shadow: 
-    0 0 10px rgba(0, 245, 212, 0.8),
-    0 0 25px rgba(0, 245, 212, 0.5),
-    0 0 45px rgba(0, 245, 212, 0.3); /* Layers three shadows for a realistic neon aura */
-}
-.current_job::after {
-  content: "_";
-  color: #00F5D4;
-  margin-left: 4px;
-  animation: blink 1s step-end infinite;
+.quick_info:hover {
+  transform: translateY(-6px);
+  border-color: #00F5D4;       
+  box-shadow: 
+    0 0 15px rgba(0, 245, 212, 0.8),
+    0 0 35px rgba(0, 245, 212, 0.4);
 }
 
-@keyframes blink {
-  50% { opacity: 0; }
-}
-/* For copyright on footer */
-.copy_right {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  color: white;
-}
-
-.copy_right:hover {
-  color: #00F5D4; /* Switches text to bright neon cyan */
-  text-shadow: 
-    0 0 10px rgba(0, 245, 212, 0.8),
-    0 0 25px rgba(0, 245, 212, 0.5),
-    0 0 45px rgba(0, 245, 212, 0.3); /* Layers three shadows for a realistic neon aura */
+/* Makes the dot and text line up neatly on the same row */
+.status_dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #00F5D4;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  animation: radar_pulse 1.5s infinite;
 }
 
+@keyframes radar_pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 212, 0.8);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 245, 212, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 212, 0);
+  }
+}
+
+
+/* For footer */
 .footer {
    border-top:3px solid #00F5D4 ;
    border-bottom: 3px solid #00F5D4;
@@ -182,8 +192,30 @@ body {
    padding: 10px;
 }
 
+.copy_right {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: white;
+}
+
 .social_links{
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+/* For universal hover effects: */
+.name:hover,
+.hello:hover,
+.nav_page:hover,
+.im_ayaan:hover,
+.current_job:hover,
+.copy_right:hover,
+.quick_info:hover {
+  color: #00F5D4; 
+  text-shadow: 
+    0 0 10px rgba(0, 245, 212, 0.8),
+    0 0 25px rgba(0, 245, 212, 0.5),
+    0 0 45px rgba(0, 245, 212, 0.3); 
 }
