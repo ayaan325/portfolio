@@ -4,15 +4,17 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;  
-    background-color:black;
+    background-color: #050505;
 }
 .header {
+    z-index: 1000;
     border-bottom: 3px solid #00F5D4;
     background-color: #090D16;
     position: sticky; 
     top: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     /* Allows Items to drop to the next line on small screens: */
     flex-wrap: wrap;
     gap: 25px;
@@ -27,6 +29,7 @@ body {
 
 .name {
   font-family: "Momo Signature", cursive;
+  font-size: 18px;
   font-weight: 400;
   font-style: normal;
   color: white;
@@ -34,6 +37,7 @@ body {
 
 .nav_page {
   font-family: "Bebas Neue", sans-serif;
+  font-size: 24px;
   font-weight: 400;
   font-style: normal;
   color: white;
@@ -46,6 +50,7 @@ body {
 /* Controls main top 3 elements (hero_text, dev_image and current status {quick_info}) */
 .hero_text { 
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   min-width: 280px;
